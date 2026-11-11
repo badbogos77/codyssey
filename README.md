@@ -108,9 +108,12 @@ codyssey
 </html>
 ```
 
-4-3. Dockerfile 파일 작성  
-FROM nginx:alpine  
+4-3. Dockerfile 파일 작성
+
+```
+FROM nginx:alpine
 COPY site/ /usr/share/nginx/html/
+```
 
 4-4. bash에서 Dockerfile로 이미지 생성 및 실행방법  
 docker build -t my-web:1.0 .  
