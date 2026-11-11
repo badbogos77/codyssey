@@ -72,10 +72,46 @@ x=1
 
 ---
 
-![버전 확인](image.png)
+![버전 확인](images/image.png)
 
-![리눅스 조작방법](image-1.png)
+![리눅스 조작방법](images/image-1.png)
 
-![파일 권한변경](image-2.png)
+![파일 권한변경](images/image-2.png)
 
-![Dockerfile build](image-3.png)
+4. Dockerfile 생성 및 site/index.html 생성
+
+4-1.폴더 구조
+codyssey
+├── README.md
+├── site/  
+├── Dockerfile
+├── images/
+
+4-2.site/index.html파일 작성
+
+<!doctype html>
+<html lang="ko"><body><h1>Hello from my custom nginx</h1></body></html>
+
+4-3. Dockerfile 파일 작성
+FROM nginx:alpine
+COPY site/ /usr/share/nginx/html/
+
+4-4. bash에서 Dockerfile로 이미지 생성 및 실행방법
+docker build -t my-web:1.0 .
+docker images my-web
+docker run -d -p 8080:80 --name my-web-8080 my-web:1.0
+docker logs my-web-8080
+curl http://localhost:8080
+
+![Dockerfile build](images/image-3.png)
+
+![서버 실행 중](images/image-4.png)
+
+5. git 설정 및 github 연동
+   (bash)
+   git config --global user.name "내 이름"
+   git config --global user.email "내 GitHub 이메일"
+   git config --global init.defaultBranch main
+   git config --list
+
+![git config 설정](images/image_config.png)
