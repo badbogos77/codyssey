@@ -1,7 +1,7 @@
 1. 실행환경
-   OS : WINDOW
-   SHELL : WSL2 Ubuntu / bash
-   DOCKER : docker --version
+   OS : WINDOW  
+   SHELL : WSL2 Ubuntu / bash  
+   DOCKER : docker --version  
    GIT : git --version
 
 2. 환경설치
