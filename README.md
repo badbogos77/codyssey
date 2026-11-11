@@ -61,14 +61,19 @@ ls -l perm_test.txt ; ls -ld perm_dir
 chmod 600 perm_test.txt ; ls -l perm_test.txt
 chmod 755 perm_test.txt ; ls -l perm_test.txt
 
-d(디렉토리) rwx(소유자) rwx(그룹) rwx(기타)
+d rwx rwx rwx
+│ │ │ └─ 기타(others)
+│ │ └─ 그룹(group)
+│ └─ 소유자(owner)
+└─ 파일 종류 (d = 디렉토리, - = 파일)
+
 r 읽기, w 수정, x 실행
 r=4
 w=2
 x=1
 예) 777 (rwxrwxrwx)
 700 (rwx------)
-644 (rw--w--w-)
+644 (rw-r--r--)
 
 ---
 
@@ -115,3 +120,14 @@ curl http://localhost:8080
    git config --list
 
 ![git config 설정](images/image_config.png)
+
+6. vscode 터미널에서
+   cd ~/codyssey
+   git init
+   git add .
+   git status # 민감정보 포함 여부 마지막 확인
+   git commit -m "docs: add workstation setup README and Dockerfile"
+   git branch -M main
+   git remote add origin https://github.com/<내-아이디>/codyssey-workstation.git
+   git remote -v
+   git push -u origin main
