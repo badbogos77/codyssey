@@ -99,8 +99,14 @@ codyssey
 
 4-2.site/index.html파일 작성
 
-> <!doctype html>
-> <html lang="ko"><body><h1>Hello from my custom nginx</h1></body></html>
+```
+<!doctype html>
+ <html lang="ko">
+ <body>
+   <h1>Hello from my custom nginx</h1>
+ </body>
+</html>
+```
 
 4-3. Dockerfile 파일 작성  
 FROM nginx:alpine  
